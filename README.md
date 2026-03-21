@@ -5,8 +5,9 @@ PyTorch implementation of CombDiet, developmental visual diets for SSL models.
 This work has been accepted to CVPR 2026.
 
 **[Learning to See Through a Baby’s Eyes: Early Visual Diets Enable Robust Visual Intelligence in Humans and Machines]()**
+
 Yusen Cai, Qing Lin*, Bhargava Satya Nunna, [Mengmi Zhang](https://a0091624.wixsite.com/deepneurocognition-1)*
-(*Corresponding author)  
+(*Corresponding authors)  
 
 ## Abstract
 Newborns perceive the world with low-acuity, color-degraded, and temporally continuous vision, which gradually sharpens as infants develop. To explore the ecological advantages of such staged "visual diets", we train self-supervised learning (SSL) models on object-centric videos under constraints that simulate infant vision: grayscale-to-color (C), blur-to-sharp (A), and preserved temporal continuity (T)—collectively termed CATDiet. For evaluation, we establish a comprehensive benchmark across ten datasets, covering clean and corrupted image recognition, texture–shape cue conflict tests, silhouette recognition, depth-order classification, and the visual cliff paradigm.
