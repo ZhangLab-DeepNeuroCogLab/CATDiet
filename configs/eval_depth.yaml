@@ -1,0 +1,34 @@
+defaults:
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+seed: 0
+float32_matmul_precision: high
+
+diet_name: Comb
+scheme_id: CombDiet
+methods: simclr
+backbone: resnet50
+stage_epochs: [10, 6, 1, 5, 1, 2, 3, 2,70]
+reload_freq: 1
+ckpt_path: /path/to/pretrain_checkpoints
+lin_ckpt_path: /path/to/linprobe_checkpoints
+num_classes: 10
+batch_size_per_device: 64
+num_workers: 8
+
+epochs: 50
+skip_depth_train: True
+
+accelerator: gpu
+devices: 1
+precision: bf16-mixed
+strategy:  ddp_find_unused_parameters_true
+
+train_parquet: /data/3dpc_depth_parquet/train.parquet
+test_parquet: /data/3dpc_depth_parquet/test.parquet
+
+run_name: ${diet_name}-${backbone}-scheme_${scheme_id}
+hydra:
+  run:
+    dir: outputs/${methods}/${run_name}/seed_${seed}

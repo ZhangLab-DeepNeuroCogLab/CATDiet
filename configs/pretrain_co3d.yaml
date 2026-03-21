@@ -1,0 +1,52 @@
+defaults:
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+# data dir
+train_dir: /path/to/co3d10_pretrain.beton
+val_dir: /path/to/co3d10_linprobe_test.beton
+linear_train_dir: /path/to/co3d_linprobe_train.beton
+ood_dir: /path/to/co3d10-C
+num_classes: 10
+num_classes_linear: 10
+
+
+seed: 42
+diet_name: "Comb"
+scheme_id: "CombDiet"
+ckpt_path: null
+lin_ckpt_path: null
+stage_epochs: [10, 6, 1, 5, 1, 2, 3, 2, 70]
+reload_freq: 1
+backbone: "resnet50"
+methods: "simclr"
+
+# batch_size and epoch
+image_size: 224
+batch_size_per_device: 64
+log_ckpt_freq: 20
+num_workers: 8
+
+# optimizer
+learning_rate: 0.0005
+weight_decay: 0.0001
+
+# precision and gpu
+accelerator: gpu
+devices: 1
+precision: "bf16-mixed"
+strategy: ddp_find_unused_parameters_true
+float32_matmul_precision: high
+
+# default
+skip_pretrain: false
+skip_linear_probe: false
+skip_linear_train: false
+
+
+log_dir: benchmark_logs
+
+run_name: ${diet_name}-${backbone}-scheme_${scheme_id}
+hydra:
+  run:
+    dir: outputs/${methods}/${run_name}/seed_${seed}

@@ -1,0 +1,32 @@
+defaults:
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+seed: 0
+float32_matmul_precision: high
+
+diet_name: CAT
+scheme_id: CATDiet
+methods: simclr
+backbone: resnet50
+stage_epochs: [10, 6, 1, 5, 1, 2, 3, 2,0]
+reload_freq: 1
+ckpt_dir: /path/to/pretrain_checkpoints
+train_dir: /path/to/co3d10_pretrain.beton
+val_dir: /path/to/co3d10_linprobe_test.beton
+linear_train_dir: /path/to/co3d10_linporbe_train.beton
+num_classes: 10
+batch_size_per_device: 64
+num_workers: 8
+image_size: 224
+
+
+accelerator: gpu
+devices: 1
+precision: bf16-mixed
+strategy:  ddp_find_unused_parameters_true
+
+run_name: ${diet_name}-${backbone}-scheme_${scheme_id}
+hydra:
+  run:
+    dir: outputs/${methods}/${run_name}/seed_${seed}
