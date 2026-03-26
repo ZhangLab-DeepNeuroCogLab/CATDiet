@@ -1,3 +1,3 @@
 CUDA_VISIBLE_DEVICES=1 python3 eval_silhouette.py \
-  ckpt_path="your pretrain ckpt path" \
-  lin_ckpt_path="your linear probe ckpt path"
+  ckpt_path="path/to/pretrain ckpt path" \
+  lin_ckpt_path="path/to/linear probe ckpt path"

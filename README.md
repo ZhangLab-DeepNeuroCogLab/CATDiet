@@ -1,10 +1,10 @@
 # Learning to See Through a Baby’s Eyes: Early Visual Diets Enable Robust Visual Intelligence in Humans and Machines
 
-## [Paper]() | [Models](https://drive.google.com/drive/folders/1M3pQ7U_DtCdpyE2ULR2WGNUX871C2_qz?usp=drive_link) | [Poster]() | [Video]()
+## [Paper](https://arxiv.org/abs/2511.14440) | [Models](https://drive.google.com/drive/folders/1M3pQ7U_DtCdpyE2ULR2WGNUX871C2_qz?usp=drive_link) | [Poster]() | [Video]()
 PyTorch implementation of CombDiet, developmental visual diets for SSL models.
 This work has been accepted to CVPR 2026.
 
-**[Learning to See Through a Baby’s Eyes: Early Visual Diets Enable Robust Visual Intelligence in Humans and Machines]()**
+**[Learning to See Through a Baby’s Eyes: Early Visual Diets Enable Robust Visual Intelligence in Humans and Machines](https://arxiv.org/abs/2511.14440)**
 
 Yusen Cai, Qing Lin*, Bhargava Satya Nunna, [Mengmi Zhang](https://a0091624.wixsite.com/deepneurocognition-1)*
 (*Corresponding authors)  
