@@ -97,7 +97,7 @@ bash scripts/eval_depth.sh
 ```bibtex
 @article{cai2025learning,
   title={Learning to See Through a Baby's Eyes: Early Visual Diets Enable Robust Visual Intelligence in Humans and Machines},
-  author={Cai, Yusen and Nunna, Bhargava Satya and Lin, Qing and Zhang, Mengmi},
+  author={Yusen Cai and Qing Lin and Bhargava Satya Nunna and Mengmi Zhang},
   journal={arXiv preprint arXiv:2511.14440},
   year={2025}
 }
